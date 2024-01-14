@@ -1,0 +1,13 @@
+#root {
+  max-width: 1280px;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+
+.def{
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  margin: auto;
+}

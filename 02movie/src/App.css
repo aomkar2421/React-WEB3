@@ -39,8 +39,8 @@
   width: 250px;
   /* display: f; */
   text-align: center;
-  background: rgba(202, 205, 222, 0.959);
-  box-shadow: 0 8px 32px 0 rgba(25, 32, 129, 0.37);
+  background: rgb(0,212,255);
+background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(203,188,12,1) 47%, rgba(217,43,58,0.874562324929972) 100%);
   backdrop-filter: blur(1.5px);
   -webkit-backdrop-filter: blur(1.5px);
   border-radius: 10px;
