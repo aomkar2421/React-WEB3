@@ -4,7 +4,9 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import { useState } from 'react';
-import Fields from './Fields.jsx';
+// import Fields from './Fields.jsx';
+import AddIcon from '@mui/icons-material/Add';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 function App() {
   const [name, setName] = useState('');
@@ -31,7 +33,7 @@ function App() {
           <TextField value={name} onChange={(e) => setName(e.target.value)} id="outlined-basic" label="name" variant="outlined" />
           <TextField value={email} onChange={(e) => setEmail(e.target.value)} id="outlined-basic" label="email" variant="outlined" />
           <Button onClick={addData} className="bttn" variant="contained">
-            ADD
+            <AddIcon/>
           </Button>
         </Stack>
       </div>
@@ -46,7 +48,19 @@ function App() {
           </Button> */}
         </div>
         {data.map((element, index) => {
-          return <Fields key={index} name={element.name} email={element.email} index={index} removeEle={() => removeEle(index)} />;
+          {/* return <Fields key={index} name={element.name} email={element.email} index={index} removeEle={() => removeEle(index)} />; */ }
+          //OR
+
+          return (
+            <div key={index} style={{ marginTop: '15px', fontWeight: '100', fontSize: '15px' }} className="data_val">
+              <h4>{element.name}</h4>
+              <h4>{element.email}</h4>
+              <Button variant="contained" color="error" onClick={removeEle}>
+                <DeleteIcon/>
+              </Button>
+            </div>
+          )
+
         })}
       </div>
     </div>

@@ -1,33 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { useState, useEffect } from 'react'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [count, setCount] = useState(1);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    async function getData() {
+      const empolyeeData = await fetch(`https://hub.dummyapis.com/employee?noofRecords=${count}&idStarts=1001`);
+      let a = await empolyeeData.json();
+      setData(a);
+      console.log(a);
+    }
+    getData();
+    document.title=`${count} employees online`
+  }, [count])
+
+
+  function increment() { 
+    setCount(count + 3);
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <button onClick={increment} >increment</button>
+      <h3>{count}</h3>
+      {
+        data.map( (element , index) => {
+          return(
+            <div key={index} style={{ display:'flex', flexDirection:'row', width:'500px', justifyContent:'space-between', margin:'auto'}}>
+            <h4>{element.firstName}</h4>
+            <h4>{element.lastName}</h4>
+            <h4>{element.age}</h4>
+            <h4>{element.contactNumber}</h4>
+            </div>
+          )
+        })
+      }
     </>
   )
 }

@@ -5,15 +5,15 @@
   text-align: center;
 }
 
+.data{
+  display: flex;
+  flex-direction: column;
+
+}
+
 .def{
   display: flex;
   justify-content: space-between;
   width: 500px;
   margin: auto;
 }
-
-.cdata{
-  display: flex;
-  flex-direction: column;
-}
-
