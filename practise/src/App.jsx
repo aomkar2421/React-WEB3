@@ -29,7 +29,7 @@ function App() {
         <input value={age} onChange={(e) => setAge(e.target.value)} type="text" name="" id="" placeholder='enter age' />
         <button onClick={addDetails} >Add</button>
       </div>
-
+ 
       <div className="data">
         <div className="def">
           <h4>Name</h4>
