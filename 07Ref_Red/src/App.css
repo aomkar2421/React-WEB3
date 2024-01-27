@@ -57,3 +57,9 @@ input[type=text] {
   justify-content: space-around;
 }
 
+button{
+  margin: 50px 10px;
+  height: 40px;
+  width: 100px;
+  border-radius: 3px;
+}
