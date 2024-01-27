@@ -6,7 +6,7 @@ import Contact from "./Contact"
 import Error from "./Error"
 import Mail from './Components/Mail'
 import Insta from './Components/Insta'
-
+import UserDetails from './Components/userDetails';
 const Header = () => {
 
     const omkar = ({isActive}) =>{
@@ -35,7 +35,9 @@ const Header = () => {
                     {/* Just while using nested Route we need to use <Route></Route> */}
             <Routes>
                 <Route path='/' element={<Home/>}/>
-                <Route path='about' element={<About/>}/>
+                <Route path='about' element={<About/>}>
+                    <Route path='userId:' element={<UserDetails/>} />
+                </Route>
                 <Route path='contact' element={<Contact/>} >
                     {/* for by default selection use index */}
                     <Route index element={<Mail/>} ></Route>
