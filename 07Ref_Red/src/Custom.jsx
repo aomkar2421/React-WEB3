@@ -13,7 +13,7 @@ const Custom = () => {
     //         let call = await fetch(`https://hub.dummyapis.com/employee?noofRecords=10&idStarts=1001`)
     //         let response = await call.json();
     //         setData(response);
-    //         console.log(response)
+    //         console.log(response)    
     //     }
     //     getData();
     // },[])
