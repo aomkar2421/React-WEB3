@@ -13,7 +13,7 @@ function Ref() {
   const counter = useRef(0);
 
   useEffect( () => {
-    // setCount(count+1); infinite rensera to avois this use useRef
+    // setCount(count+1); // causes infinite renders, to avoid this use useRef
     prevState.current = Input;
     counter.current = counter.current + 1;
   })
@@ -34,9 +34,12 @@ function Ref() {
       <div className="b">
         <input type="text" onChange={formHandler} className='it' />
         {/* <h4>Page is renderes {count} times</h4> */}
+
         <h4>Page is renderes {counter.current} times</h4>
-        <h4>Prev State was {prevState.current} </h4>
+
+        {/* <h4>Prev State was {prevState.current} </h4> */}
         <br /> <br />
+
         <input type="text" ref={abc} className='it' />
         <button style={{margin:'10px', height:'50px', position:'relative', bottom:'8px'}} className='btn btn-primary' onClick={clickHandler} >Click Me</button>
 

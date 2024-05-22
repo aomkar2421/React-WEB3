@@ -5,10 +5,14 @@ const Callback = () => {
   const [count , setCount] = useState(0);
   const [todo , setTodo] = useState([]);
 
+  // const addTodo = () => {
+  //   setTodo( (t) => [...t , 'New Todo'] );
+  // }
+
   const addTodo = useCallback( () => {
     setTodo( (t) => [...t , 'New Todo'] );
   },[] )
-  
+
   return (
     <div className='b' >
         <div>
